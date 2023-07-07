@@ -1,8 +1,9 @@
-// Ceci est la 3ème version du projet
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 
 public class Main {
     public static void main(String[] args) {
-        Test.test(3,true);
+        Test.test(9, true);
 
     }
 }
@@ -41,7 +42,8 @@ class De {
     }
 
     int lancer(int noDe) {
-        // simule un lancer de de selon le nombre de faces
+        // simule un lancer de dé
+        // renvoie une valeur entre 1 et le nb de faces
         return (int) (Math.random() * nbFaces + 1);
     }
 
@@ -55,18 +57,14 @@ class De {
         System.out.println("Le lancer de ce dé a donné : " + lancer(num));
     }
 
-    boolean pipe(int noDe) {
-        // lancé d'un dé pipé et retour d'un booléen
-        int tirage = lancer(noDe);
-        boolean dePipe = false;
+    void pipe(int noDe) {
+        // lancé d'un dé pipé et modification de sa valeur
+        valeur = lancer(noDe);
 
-        while (tirage != 1 && tirage != 2 && tirage != 4) {
-            tirage = lancer(noDe);
-            dePipe = true;
+        while (valeur != 1 && valeur != 2 && valeur != 4) {
+            valeur = lancer(noDe);
             System.out.println(" !!!!!!! Ce tirage a été modifié V3!!!!!!!!!!");
-           }
-
-        return dePipe;
+        }
     }
 }
 
@@ -75,9 +73,9 @@ class Test {
     public static void test(int nbDe, boolean pipe) {
         for (int i = 0; i < nbDe; i++) {
             De de = new De(); // nouvelle instance
-            if (pipe){
-                de.pipe(de.num);}
-            else {
+            if (pipe) {
+                de.pipe(de.num);
+            } else {
                 de.lancer(de.num);
             }
             de.toString(de.num);
