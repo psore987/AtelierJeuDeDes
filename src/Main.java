@@ -1,5 +1,4 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+// Ceci est la 3ème version du projet
 
 public class Main {
     public static void main(String[] args) {
@@ -48,11 +47,11 @@ class De {
 
     void toString(int noDe) {
         // renvoie un récapitulatif du tirage du dé dont le no est passé en paramètre
-     /*   System.out.println(" ==================== Début =============== ");
+        System.out.println(" ==================== Début =============== ");
         System.out.println("le nombre de faces est : " + getNbFaces(num));
         System.out.println("Le numéro du dé est : " + getNum(num));
         System.out.println("la valeur du dé est : " + getValeur(num));
-        System.out.println("============== C'est parti !! =============="); */
+        System.out.println("============== C'est parti !! ==============");
         System.out.println("Le lancer de ce dé a donné : " + lancer(num));
     }
 
