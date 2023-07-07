@@ -29,43 +29,41 @@ class De {
     }
 
     // Accesseurs de la classe De
-    int getNbFaces(int noDe) { // Afficher le nb de faces
+    int getNbFaces() { // Afficher le nb de faces
         return nbFaces;
     }
 
-    int getValeur(int noDe) { // Afficher la valeur du de
+    int getValeur() { // Afficher la valeur du de
         return valeur;
     }
 
-    int getNum(int noDe) { // Afficher le numero du de
+    int getNum() { // Afficher le numero du de
         return num;
     }
 
-    int lancer(int noDe) {
+    void lancer() {
         // simule un lancer de dé
-        // renvoie une valeur entre 1 et le nb de faces
-        return (int) (Math.random() * nbFaces + 1);
+        // et modifie la valeur du dé
+        valeur = (int) (Math.random() * nbFaces + 1);
     }
 
-    void toString(int noDe) {
+    void toString2() {
         // renvoie un récapitulatif du tirage du dé dont le no est passé en paramètre
-        System.out.println(" ==================== Début =============== ");
-        System.out.println("le nombre de faces est : " + getNbFaces(num));
-        System.out.println("Le numéro du dé est : " + getNum(num));
-        System.out.println("la valeur du dé est : " + getValeur(num));
-        System.out.println("============== C'est parti !! ==============");
-        System.out.println("Le lancer de ce dé a donné : " + lancer(num));
+       System.out.println("Le lancer de ce dé a donné : " + valeur);
     }
 
-    void pipe(int noDe) {
+    void pipe() {
         // lancé d'un dé pipé et modification de sa valeur
-        valeur = lancer(noDe);
-
+        lancer();
+        boolean tricher = false;
         while (valeur != 1 && valeur != 2 && valeur != 4) {
-            valeur = lancer(noDe);
-            System.out.println(" !!!!!!! Ce tirage a été modifié V3!!!!!!!!!!");
+            lancer();
+            System.out.println(" triche ! ");
+            tricher = true;
         }
+       System.out.println(tricher);
     }
+
 }
 
 class Test {
@@ -74,11 +72,11 @@ class Test {
         for (int i = 0; i < nbDe; i++) {
             De de = new De(); // nouvelle instance
             if (pipe) {
-                de.pipe(de.num);
+                de.pipe();
             } else {
-                de.lancer(de.num);
+                de.lancer();
             }
-            de.toString(de.num);
+            de.toString2();
         }
     }
 }
