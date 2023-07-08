@@ -1,13 +1,8 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-
 public class Main {
     public static void main(String[] args) {
         // Test.test(9, true);
         // Simulateur simulateur = new Simulateur();
-        Simulateur simulateur = new Simulateur();
-        simulateur.simuler();
-
+        TestSimulateur.testSimulateur();
     }
 }
 
@@ -44,15 +39,16 @@ class De {
         return num;
     }
 
-    void lancer() {
+    int lancer() {
         // simule un lancer de dé
         // et modifie la valeur du dé
         valeur = (int) (Math.random() * nbFaces + 1);
+        return valeur;
     }
 
     void toString2() {
         // renvoie un récapitulatif du tirage du dé dont le no est passé en paramètre
-       System.out.println("Le lancer de ce dé a donné : " + valeur);
+        System.out.println("Le lancer de ce dé a donné : " + valeur);
     }
 
     void pipe() {
@@ -64,9 +60,8 @@ class De {
             System.out.println(" triche ! ");
             tricher = true;
         }
-       System.out.println(tricher);
+        System.out.println(tricher);
     }
-
 }
 
 class Test {
@@ -85,34 +80,66 @@ class Test {
 }
 
 class Simulateur {
-    int nbLignes = 11; //la 1ère ligne n'est pas utilisée
+    int nbLignes = 11;
     int nbColonnes = 20;
-    int tab[][] = new int[nbLignes][nbColonnes];
+    int[][] tab;
+
+    // constructeur
+    Simulateur() {
+        this.tab = new int[nbLignes][nbColonnes];
+        initialiser();
+    }
 
     public void simuler() {
-
-        initialiser();
+        remplir();
         afficherMatrice();
-    }
+        }
 
-    private void initialiser() { //initialiser la matrice à 0
-        int i, j;
-        for (i = 1; i < nbLignes; i++) {
-                for (j = 0; j < nbColonnes; j++) {
-                    tab[i][j] = 0;
-                }
+    private void initialiser() { // initialiser la matrice à 0
+        for (int i = 1; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                tab[i][j] = 0;
             }
+        }
         System.out.println("initialisation ok ! ");
     }
-    private void afficherMatrice() {
 
-            int i, j;
-            for (i = 1; i < nbLignes; i++) {
-                System.out.print("L" + i + "\t");
-                for (j = 0; j < nbColonnes; j++) {
-                    System.out.print(tab[i][j] + "\t");
-                }
-                System.out.println();
+    private void afficherMatrice() {
+        for (int i = 1; i < nbLignes; i++) {
+            afficherLancersJoueur(i);
+        }
+    }
+
+    int afficherTotalJoueur(int nbJ){
+        int j;
+        int somme = 0;
+        for (j = 0; j<nbColonnes;j++){
+            somme += tab[nbJ][j];
+        }
+        return somme;
+    }
+    private void remplir() {
+        for (int i = 1; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                De de = new De();
+                tab[i][j] = de.lancer();
             }
+        }
+    }
+
+    private void afficherLancersJoueur(int numJ) {
+        System.out.print("Lancers du joueur " + numJ + ": ");
+        for (int j = 0; j < nbColonnes; j++) {
+            System.out.print(tab[numJ][j] + " ");
+        }
+        System.out.print("Total : " + afficherTotalJoueur(numJ));
+        System.out.println();
+    }
+}
+
+class TestSimulateur {
+    public static void testSimulateur() {
+        Simulateur simulateur = new Simulateur();
+        simulateur.simuler();
     }
 }
