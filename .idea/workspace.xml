@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ae8925-0064-4366-8b79-97880dcbed54" name="Changes" comment="Modification des paramètres. Programme qui fonctionne : partie 1">
+    <list default="true" id="01ae8925-0064-4366-8b79-97880dcbed54" name="Changes" comment="Fin de l'exercice 7. Ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/De.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/De.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Main.class" afterDir="false" />
@@ -110,7 +110,31 @@
       <option name="project" value="LOCAL" />
       <updated>1688762064727</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Création de la matrice ok">
+      <option name="closed" value="true" />
+      <created>1688775529749</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688775529749</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fin de l'exercice 5 avec total de chaque joueur">
+      <option name="closed" value="true" />
+      <created>1688780546698</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688780546698</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fin de l'exercice 7. Ok">
+      <option name="closed" value="true" />
+      <created>1688783107934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688783107934</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -141,7 +165,10 @@
     <MESSAGE value="Avant modification des paramètres" />
     <MESSAGE value="Modification des paramètres. Programme qui fonctionne (partie 1)" />
     <MESSAGE value="Modification des paramètres. Programme qui fonctionne : partie 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification des paramètres. Programme qui fonctionne : partie 1" />
+    <MESSAGE value="Création de la matrice ok" />
+    <MESSAGE value="Fin de l'exercice 5 avec total de chaque joueur" />
+    <MESSAGE value="Fin de l'exercice 7. Ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fin de l'exercice 7. Ok" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

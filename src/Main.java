@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
-        TestSimulateur.testSimulateur();
+      //  TestSimulateur.testSimulateur();
+        Joueur.initJoueurs();
+        Joueur.afficherJoueurs();
     }
 }
 
@@ -78,8 +81,9 @@ class Test {
 }
 
 class Simulateur {
-    int nbLignes = 21; // = nb de joueurs + 1 la 1ere ligne ne sera pas remplie
-    int nbColonnes = 30;
+    int nbLignes = 11; // = nb de joueurs + 1 la 1ere ligne ne sera pas remplie
+
+        int nbColonnes = 20;
     int[][] tab;
 
     // constructeur
@@ -135,6 +139,7 @@ class Simulateur {
             }
         }
         System.out.print("Total : " + afficherTotalJoueur(numJ) + " dont " + nbSix +" six");
+
         System.out.println();
     }
 }
@@ -146,3 +151,60 @@ class TestSimulateur {
     }
 }
 
+class Joueur {
+    String nomJ;
+    String prenomJ;
+    int[] tiragesJ;
+    int totalJ;
+
+    // constructeur
+    Joueur(String nomJ, String prenomJ, int[] tiragesJ, int totalJ) {
+        this.nomJ = nomJ;
+        this.prenomJ = prenomJ;
+        this.tiragesJ = tiragesJ;
+        this.totalJ = totalJ;
+    }
+
+    // methodes
+    public static ArrayList<Joueur> initJoueurs() {
+        ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>();
+
+        // Création des joueurs
+        Joueur joueur1 = new Joueur("Nom1", "Prenom1", new int[20], 0);
+        Joueur joueur2 = new Joueur("Nom2", "Prenom2", new int[20], 0);
+        Joueur joueur3 = new Joueur("Nom3", "Prenom3", new int[20], 0);
+        Joueur joueur4 = new Joueur("Nom4", "Prenom4", new int[20], 0);
+        Joueur joueur5 = new Joueur("Nom5", "Prenom5", new int[20], 0);
+        Joueur joueur6 = new Joueur("Nom6", "Prenom6", new int[20], 0);
+        Joueur joueur7 = new Joueur("Nom7", "Prenom7", new int[20], 0);
+        Joueur joueur8 = new Joueur("Nom8", "Prenom8", new int[20], 0);
+        Joueur joueur9 = new Joueur("Nom9", "Prenom9", new int[20], 0);
+        Joueur joueur10 = new Joueur("Nom10", "Prenom10", new int[20], 0);
+
+
+        // Ajout des joueurs à la liste
+        listeJoueurs.add(joueur1);
+        listeJoueurs.add(joueur2);
+        listeJoueurs.add(joueur3);
+        listeJoueurs.add(joueur4);
+        listeJoueurs.add(joueur5);
+        listeJoueurs.add(joueur6);
+        listeJoueurs.add(joueur7);
+        listeJoueurs.add(joueur8);
+        listeJoueurs.add(joueur9);
+        listeJoueurs.add(joueur10);
+
+
+        return listeJoueurs;
+    }
+
+    public static void afficherJoueurs() {
+        ArrayList<Joueur> listeJoueurs = initJoueurs();
+
+        for (Joueur joueur : listeJoueurs) {
+            System.out.println("Joueur : " + joueur.nomJ + " " + joueur.prenomJ);
+            System.out.println("Score total : " + joueur.totalJ);
+            System.out.println();
+        }
+    }
+}
