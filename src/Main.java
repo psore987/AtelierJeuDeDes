@@ -1,7 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // Test.test(9, true);
-        // Simulateur simulateur = new Simulateur();
         TestSimulateur.testSimulateur();
     }
 }
@@ -40,19 +38,19 @@ class De {
     }
 
     int lancer() {
-        // simule un lancer de dé
-        // et modifie la valeur du dé
+        // simule un lancer de de
+        // et modifie la valeur du de
         valeur = (int) (Math.random() * nbFaces + 1);
         return valeur;
     }
 
     void toString2() {
-        // renvoie un récapitulatif du tirage du dé dont le no est passé en paramètre
+        // renvoie un récapitulatif du tirage du dé dont le no est passe en parametre
         System.out.println("Le lancer de ce dé a donné : " + valeur);
     }
 
     void pipe() {
-        // lancé d'un dé pipé et modification de sa valeur
+        // lancer d'un dé pipe et modification de sa valeur
         lancer();
         boolean tricher = false;
         while (valeur != 1 && valeur != 2 && valeur != 4) {
@@ -80,8 +78,8 @@ class Test {
 }
 
 class Simulateur {
-    int nbLignes = 11;
-    int nbColonnes = 20;
+    int nbLignes = 21; // = nb de joueurs + 1 la 1ere ligne ne sera pas remplie
+    int nbColonnes = 30;
     int[][] tab;
 
     // constructeur
@@ -128,11 +126,15 @@ class Simulateur {
     }
 
     private void afficherLancersJoueur(int numJ) {
+        int nbSix = 0;
         System.out.print("Lancers du joueur " + numJ + ": ");
         for (int j = 0; j < nbColonnes; j++) {
             System.out.print(tab[numJ][j] + " ");
+            if (tab[numJ][j] == 6) {
+                nbSix += 1;
+            }
         }
-        System.out.print("Total : " + afficherTotalJoueur(numJ));
+        System.out.print("Total : " + afficherTotalJoueur(numJ) + " dont " + nbSix +" six");
         System.out.println();
     }
 }
@@ -143,3 +145,4 @@ class TestSimulateur {
         simulateur.simuler();
     }
 }
+
