@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ae8925-0064-4366-8b79-97880dcbed54" name="Changes" comment="Fin de l'exercice 7. Ok">
+    <list default="true" id="01ae8925-0064-4366-8b79-97880dcbed54" name="Changes" comment="Array List pas tout a fait terminée">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/De.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/De.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AtelierJeuDeDes/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688783107934</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Array List pas tout a fait terminée">
+      <option name="closed" value="true" />
+      <created>1688789007792</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688789007792</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -168,7 +174,8 @@
     <MESSAGE value="Création de la matrice ok" />
     <MESSAGE value="Fin de l'exercice 5 avec total de chaque joueur" />
     <MESSAGE value="Fin de l'exercice 7. Ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fin de l'exercice 7. Ok" />
+    <MESSAGE value="Array List pas tout a fait terminée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Array List pas tout a fait terminée" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

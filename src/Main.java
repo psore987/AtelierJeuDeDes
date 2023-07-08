@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
-      //  TestSimulateur.testSimulateur();
         Joueur.initJoueurs();
+        TestSimulateur.testSimulateur();
         Joueur.afficherJoueurs();
     }
 }
@@ -83,7 +83,7 @@ class Test {
 class Simulateur {
     int nbLignes = 11; // = nb de joueurs + 1 la 1ere ligne ne sera pas remplie
 
-        int nbColonnes = 20;
+        int nbColonnes = 10;
     int[][] tab;
 
     // constructeur
@@ -106,6 +106,7 @@ class Simulateur {
         System.out.println("initialisation ok ! ");
     }
 
+
     private void afficherMatrice() {
         for (int i = 1; i < nbLignes; i++) {
             afficherLancersJoueur(i);
@@ -118,23 +119,29 @@ class Simulateur {
         for (j = 0; j<nbColonnes;j++){
             somme += tab[nbJ][j];
         }
+        //stocker le total dans l'ArrayList
+        Joueur joueurJ = Joueur.listeJoueurs.get(nbJ - 1);
+        joueurJ.totalJ = somme;
         return somme;
     }
     private void remplir() {
         for (int i = 1; i < nbLignes; i++) {
+            Joueur joueurJ = Joueur.listeJoueurs.get(i - 1);
             for (int j = 0; j < nbColonnes; j++) {
                 De de = new De();
                 tab[i][j] = de.lancer();
+                joueurJ.tiragesJ[j] = tab[i][j]; //conserver les valeurs dans un ArrayList
             }
         }
     }
 
     private void afficherLancersJoueur(int numJ) {
+        // affiche les lancers du joueur et stocke ces tirages dans l'ArrayList
         int nbSix = 0;
         System.out.print("Lancers du joueur " + numJ + ": ");
         for (int j = 0; j < nbColonnes; j++) {
             System.out.print(tab[numJ][j] + " ");
-            if (tab[numJ][j] == 6) {
+            if (tab[numJ][j] == 6) { //compter le nombre de 6
                 nbSix += 1;
             }
         }
@@ -155,10 +162,13 @@ class Joueur {
     String nomJ;
     String prenomJ;
     int[] tiragesJ;
+    int noJ;
     int totalJ;
+    static ArrayList<Joueur> listeJoueurs = initJoueurs();
 
     // constructeur
-    Joueur(String nomJ, String prenomJ, int[] tiragesJ, int totalJ) {
+    Joueur(int noJ, String nomJ, String prenomJ, int[] tiragesJ, int totalJ) {
+        this.noJ = noJ;
         this.nomJ = nomJ;
         this.prenomJ = prenomJ;
         this.tiragesJ = tiragesJ;
@@ -170,16 +180,16 @@ class Joueur {
         ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>();
 
         // Création des joueurs
-        Joueur joueur1 = new Joueur("Nom1", "Prenom1", new int[20], 0);
-        Joueur joueur2 = new Joueur("Nom2", "Prenom2", new int[20], 0);
-        Joueur joueur3 = new Joueur("Nom3", "Prenom3", new int[20], 0);
-        Joueur joueur4 = new Joueur("Nom4", "Prenom4", new int[20], 0);
-        Joueur joueur5 = new Joueur("Nom5", "Prenom5", new int[20], 0);
-        Joueur joueur6 = new Joueur("Nom6", "Prenom6", new int[20], 0);
-        Joueur joueur7 = new Joueur("Nom7", "Prenom7", new int[20], 0);
-        Joueur joueur8 = new Joueur("Nom8", "Prenom8", new int[20], 0);
-        Joueur joueur9 = new Joueur("Nom9", "Prenom9", new int[20], 0);
-        Joueur joueur10 = new Joueur("Nom10", "Prenom10", new int[20], 0);
+        Joueur joueur1 = new Joueur(1,"Nom1", "Prenom1", new int[20], 0);
+        Joueur joueur2 = new Joueur(2,"Nom2", "Prenom2", new int[20], 0);
+        Joueur joueur3 = new Joueur(3,"Nom3", "Prenom3", new int[20], 0);
+        Joueur joueur4 = new Joueur(4,"Nom4", "Prenom4", new int[20], 0);
+        Joueur joueur5 = new Joueur(5,"Nom5", "Prenom5", new int[20], 0);
+        Joueur joueur6 = new Joueur(6,"Nom6", "Prenom6", new int[20], 0);
+        Joueur joueur7 = new Joueur(7,"Nom7", "Prenom7", new int[20], 0);
+        Joueur joueur8 = new Joueur(8,"Nom8", "Prenom8", new int[20], 0);
+        Joueur joueur9 = new Joueur(9,"Nom9", "Prenom9", new int[20], 0);
+        Joueur joueur10 = new Joueur(10,"Nom10", "Prenom10", new int[20], 0);
 
 
         // Ajout des joueurs à la liste
@@ -199,11 +209,14 @@ class Joueur {
     }
 
     public static void afficherJoueurs() {
-        ArrayList<Joueur> listeJoueurs = initJoueurs();
-
+       // ArrayList<Joueur> listeJoueurs = initJoueurs();
+        int j;
         for (Joueur joueur : listeJoueurs) {
-            System.out.println("Joueur : " + joueur.nomJ + " " + joueur.prenomJ);
-            System.out.println("Score total : " + joueur.totalJ);
+            System.out.print("Joueur : " + joueur.nomJ + " " + joueur.prenomJ + " ");
+            for (j=0; j < 10; j++){
+                System.out.print(joueur.tiragesJ[j]);
+            }
+            System.out.println(" Score total : " + joueur.totalJ);
             System.out.println();
         }
     }
