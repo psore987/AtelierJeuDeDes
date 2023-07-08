@@ -3,7 +3,10 @@
 
 public class Main {
     public static void main(String[] args) {
-        Test.test(9, true);
+        // Test.test(9, true);
+        // Simulateur simulateur = new Simulateur();
+        Simulateur simulateur = new Simulateur();
+        simulateur.simuler();
 
     }
 }
@@ -78,5 +81,38 @@ class Test {
             }
             de.toString2();
         }
+    }
+}
+
+class Simulateur {
+    int nbLignes = 11; //la 1ère ligne n'est pas utilisée
+    int nbColonnes = 20;
+    int tab[][] = new int[nbLignes][nbColonnes];
+
+    public void simuler() {
+
+        initialiser();
+        afficherMatrice();
+    }
+
+    private void initialiser() { //initialiser la matrice à 0
+        int i, j;
+        for (i = 1; i < nbLignes; i++) {
+                for (j = 0; j < nbColonnes; j++) {
+                    tab[i][j] = 0;
+                }
+            }
+        System.out.println("initialisation ok ! ");
+    }
+    private void afficherMatrice() {
+
+            int i, j;
+            for (i = 1; i < nbLignes; i++) {
+                System.out.print("L" + i + "\t");
+                for (j = 0; j < nbColonnes; j++) {
+                    System.out.print(tab[i][j] + "\t");
+                }
+                System.out.println();
+            }
     }
 }
